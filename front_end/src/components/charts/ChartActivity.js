@@ -27,13 +27,11 @@ export default function ChartActivity() {
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
       <XAxis dataKey="name" axisLine={false} tickLine={false} />
       <YAxis orientation="right" axisLine={false} tickLine={false} />
-      <Tooltip content={<CustomTooltip />} />
-      <Legend
-        verticalAlign="top"
-        align="right"
-        id="legend"
-        margin={{ top: 2, right: 2 }}
+      <Tooltip
+        content={<CustomTooltip />}
+        wrapperStyle={{ outlineStyle: 'none' }}
       />
+      <Legend verticalAlign="top" align="right" />
       <Bar dataKey="pv" barSize={10} fill="red" radius={[10, 10, 0, 0]} />
       <Bar dataKey="uv" barSize={10} fill="black" radius={[10, 10, 0, 0]} />
     </BarChart>
