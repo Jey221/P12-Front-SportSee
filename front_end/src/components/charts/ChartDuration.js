@@ -1,5 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import Datas from "../data/data.json";
+import Datas from "../../data/data.json";
 
 console.log(Datas);
 

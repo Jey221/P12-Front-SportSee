@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell } from "recharts";
-import Datas from '../data/data3.json'
+import Datas from '../../data/data3.json'
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 export default function ChartScore() {

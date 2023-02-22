@@ -1,0 +1,20 @@
+.activity {
+  background: rgba(251, 251, 251, 1);
+  margin: 2%;
+  width: 900px;
+  padding: 2%;
+}
+.activity h4 {
+  text-align: start;
+}
+.tooltip {
+  width: 140%;
+  padding: 2%;
+  padding-left: 20%;
+  background-color: red;
+  color: white;
+  align-items: center;
+}
+.recharts-legend-wrapper {
+  margin-top: -4%;
+}

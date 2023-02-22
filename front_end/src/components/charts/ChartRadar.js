@@ -5,7 +5,7 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis
 } from "recharts";
-import Datas from '../data/data2.json'
+import Datas from '../../data/data2.json'
 
 export default function ChartRadar() {
   return (
