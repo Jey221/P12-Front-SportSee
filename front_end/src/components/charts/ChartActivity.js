@@ -28,7 +28,12 @@ export default function ChartActivity() {
       <XAxis dataKey="name" axisLine={false} tickLine={false} />
       <YAxis orientation="right" axisLine={false} tickLine={false} />
       <Tooltip content={<CustomTooltip />} />
-      <Legend verticalAlign="top" align="right" id="legend" />
+      <Legend
+        verticalAlign="top"
+        align="right"
+        id="legend"
+        margin={{ top: 2, right: 2 }}
+      />
       <Bar dataKey="pv" barSize={10} fill="red" radius={[10, 10, 0, 0]} />
       <Bar dataKey="uv" barSize={10} fill="black" radius={[10, 10, 0, 0]} />
     </BarChart>
