@@ -1,0 +1,9 @@
+.score {
+  background: rgba(251, 251, 251, 1);
+
+  margin: 2%;
+  padding: 2%;
+}
+.legendScore {
+  font-weight: 800;
+}

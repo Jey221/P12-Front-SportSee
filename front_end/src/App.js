@@ -3,7 +3,7 @@ import './style/charts/chartActivity.css';
 import ChartActivity from './components/charts/ChartActivity';
 import ChartDuration from './components/charts/ChartDuration';
 import ChartRadar from './components/charts/ChartRadar';
-import ChartScore from './components/charts/ChartScore';
+import ChartScore, { Legend } from './components/charts/ChartScore';
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
       </div>
       <div className="score">
         <h2>score</h2>
-
         <ChartScore />
+        <Legend />
       </div>
     </div>
   );
