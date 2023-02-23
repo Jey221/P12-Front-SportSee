@@ -15,15 +15,15 @@ function App() {
       </div>
       <div className="duration">
         <h2>graph durée</h2>
-
         <ChartDuration />
       </div>
-      <h2>graph radar</h2>
-      <div>
+      <div className="radar">
+        <h2>graph radar</h2>
         <ChartRadar />
       </div>
-      <h2>score</h2>
-      <div>
+      <div className="score">
+        <h2>score</h2>
+
         <ChartScore />
       </div>
     </div>

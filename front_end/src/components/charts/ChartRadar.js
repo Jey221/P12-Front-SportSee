@@ -1,13 +1,14 @@
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis
-} from "recharts";
-import Datas from '../../data/data2.json'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
+import Datas from '../../data/data2.json';
 
-export default function ChartRadar() {
+console.log(
+  Datas.map((data) => {
+    return data.subject;
+  })
+);
+
+export default function App() {
+  console.log(Datas[0].subject);
   return (
     <RadarChart
       cx={300}
@@ -16,17 +17,11 @@ export default function ChartRadar() {
       width={500}
       height={500}
       data={Datas}
+      style={{ background: '#282D30' }}
     >
-      <PolarGrid />
+      <PolarGrid radialLines={false} />
       <PolarAngleAxis dataKey="subject" />
-      <PolarRadiusAxis />
-      <Radar
-        name="Mike"
-        dataKey="A"
-        stroke="#8884d8"
-        fill="#8884d8"
-        fillOpacity={0.6}
-      />
+      <Radar name="Mike" dataKey="A" fill="#FF0101B2" fillOpacity={0.6} />
     </RadarChart>
   );
 }
