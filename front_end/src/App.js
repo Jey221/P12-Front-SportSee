@@ -10,11 +10,12 @@ function App() {
     <div className="App">
       <h1>Projet 12</h1>
       <div className="activity">
-        <h4>graph activité</h4>
+        <h4>Activité quotidienne</h4>
         <ChartActivity />
       </div>
-      <h2>graph durée</h2>
-      <div>
+      <div className="duration">
+        <h2>graph durée</h2>
+
         <ChartDuration />
       </div>
       <h2>graph radar</h2>
