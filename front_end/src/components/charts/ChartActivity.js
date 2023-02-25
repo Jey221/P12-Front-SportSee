@@ -14,8 +14,8 @@ import Datas from '../../data/data.json';
 export default function ChartActivity() {
   return (
     <BarChart
-      width={835}
-      height={300}
+      width={550}
+      height={223}
       data={Datas}
       margin={{
         top: 5,

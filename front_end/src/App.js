@@ -1,11 +1,10 @@
 import './style/App.css';
-import './style/charts/chartActivity.css';
-import ChartActivity from './components/charts/ChartActivity';
-import ChartDuration from './components/charts/ChartDuration';
-import ChartRadar from './components/charts/ChartRadar';
-import ChartScore, { Legend } from './components/charts/ChartScore';
+// import './style/charts/chartActivity.css';
 import Header from './components/Header/Header';
 import LayoutVertical from './components/LayoutVertical';
+import UserInfo from './components/UserInfos';
+import Charts from './components/charts/Charts';
+import Nutriments from './components/Nutriments';
 
 function App() {
   return (
@@ -13,23 +12,13 @@ function App() {
       <Header />
       <LayoutVertical />
       <div className="main">
-        <div className="activity">
-          <h4>Activité quotidienne</h4>
-          <ChartActivity />
-        </div>
-        <div className="duration">
-          <h2>graph durée</h2>
-          <ChartDuration />
-        </div>
-        <div className="radar">
-          <h2>graph radar</h2>
-          <ChartRadar />
-        </div>
-        <div className="score">
-          <h2>score</h2>
-          <ChartScore />
-          <Legend />
-        </div>
+        <section className="sectionUp">
+          <UserInfo />
+        </section>
+        <section className="sectionDown">
+          <Charts />
+          <Nutriments />
+        </section>
       </div>
     </div>
   );

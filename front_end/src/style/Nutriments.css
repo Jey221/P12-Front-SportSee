@@ -1,0 +1,9 @@
+.Nutriments {
+  display: flex;
+  align-items: center;
+  background-color: #fbfbfb;
+}
+.Nutriments img {
+  width: 42px;
+  height: 42px;
+}

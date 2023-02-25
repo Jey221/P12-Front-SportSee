@@ -1,7 +1,7 @@
 import '../../style/charts/chartScore.css';
 import { PieChart, Pie, Cell } from 'recharts';
 import Datas from '../../data/data3.json';
-const COLORS = ['#0088FE', '#ffffff'];
+const COLORS = ['#ef0e0e', '#ffffff'];
 
 export function Legend() {
   return (
@@ -13,18 +13,17 @@ export function Legend() {
 
 export default function ChartScore() {
   return (
-    <PieChart width={800} height={400}>
+    <PieChart width={183} height={190}>
       <Pie
         data={Datas}
-        cx={120}
-        cy={200}
+        cx={90}
+        cy={100}
         innerRadius={60}
         outerRadius={80}
-        fill="#8884d8"
         paddingAngle={5}
         dataKey="value"
       >
-        <p>lol</p>
+        <p></p>
         {Datas.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}

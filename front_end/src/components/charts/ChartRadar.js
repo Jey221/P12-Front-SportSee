@@ -5,11 +5,11 @@ import Datas from '../../data/data2.json';
 export default function App() {
   return (
     <RadarChart
-      cx={300}
-      cy={250}
-      outerRadius={150}
-      width={500}
-      height={500}
+      cx={90}
+      cy={100}
+      outerRadius={60}
+      width={183}
+      height={190}
       data={Datas}
       style={{ background: '#282D30' }}
     >

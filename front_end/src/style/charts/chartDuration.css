@@ -1,9 +1,6 @@
-.duration {
-  margin: 2%;
-  padding: 2%;
-}
-.recharts-text {
+#duration tspan {
   fill: #ffffff;
+  font-size: 9px;
 }
 .tooltipDuration {
   width: 100%;

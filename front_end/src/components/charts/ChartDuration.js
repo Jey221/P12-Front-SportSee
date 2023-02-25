@@ -14,8 +14,8 @@ import Datas from '../../data/data.json';
 export default function ChartDuration() {
   return (
     <LineChart
-      width={500}
-      height={300}
+      width={183}
+      height={190}
       data={Datas}
       margin={{
         top: 5,
@@ -30,7 +30,13 @@ export default function ChartDuration() {
         vertical={false}
         horizontal={false}
       />
-      <XAxis dataKey="name" axisLine={false} tickLine={false} />
+      <XAxis
+        dataKey="name"
+        axisLine={false}
+        tickLine={false}
+        fill="white"
+        id="duration"
+      />
       <YAxis hide={true} axisLine={false} tickLine={false} />
       <Tooltip
         content={<CustomTooltip />}

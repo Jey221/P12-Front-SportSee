@@ -1,8 +1,6 @@
 .activity {
   background: rgba(251, 251, 251, 1);
-  margin: 2%;
-  width: 900px;
-  padding: 2%;
+  width: 555px;
 }
 .activity h4 {
   text-align: start;
@@ -17,4 +15,7 @@
 }
 .recharts-legend-wrapper {
   margin-top: -4%;
+}
+.recharts-text.recharts-cartesian-axis-tick-value tspan {
+  fill: #9b9eac;
 }
