@@ -1,6 +1,9 @@
 import '../../style/charts/chartRadar.css';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
-import Datas from '../../data/data2.json';
+// import Datas from '../../data/data2.json';
+import { USER_PERFORMANCE } from '../../data/formatData';
+
+console.log(USER_PERFORMANCE[0].kind);
 
 export default function App() {
   return (
@@ -10,12 +13,12 @@ export default function App() {
       outerRadius={60}
       width={183}
       height={190}
-      data={Datas}
+      data={USER_PERFORMANCE[0].data}
       style={{ background: '#282D30' }}
     >
       <PolarGrid radialLines={false} />
-      <PolarAngleAxis dataKey="subject" />
-      <Radar name="Mike" dataKey="A" fill="#FF0101B2" fillOpacity={0.6} />
+      <PolarAngleAxis dataKey={'kind'} />
+      <Radar name="Mike" dataKey="value" fill="#FF0101B2" fillOpacity={0.6} />
     </RadarChart>
   );
 }

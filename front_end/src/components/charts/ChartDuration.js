@@ -9,14 +9,15 @@ import {
   Rectangle,
 } from 'recharts';
 import PropTypes from 'prop-types';
-import Datas from '../../data/data.json';
+// import Datas from '../../data/data.json';
+import { USER_AVERAGE_SESSIONS } from '../../data/formatData';
 
 export default function ChartDuration() {
   return (
     <LineChart
       width={183}
       height={190}
-      data={Datas}
+      data={USER_AVERAGE_SESSIONS[0].sessions}
       margin={{
         top: 5,
         right: 30,
@@ -31,7 +32,7 @@ export default function ChartDuration() {
         horizontal={false}
       />
       <XAxis
-        dataKey="name"
+        dataKey="day"
         axisLine={false}
         tickLine={false}
         fill="white"
@@ -45,7 +46,7 @@ export default function ChartDuration() {
       />
       <Line
         type="monotone"
-        dataKey="pv"
+        dataKey="sessionLength"
         stroke="white"
         dot={{ r: 0 }}
         strokeWidth={2}
