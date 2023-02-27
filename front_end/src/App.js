@@ -1,10 +1,12 @@
 import './style/App.css';
-// import './style/charts/chartActivity.css';
 import Header from './components/Header/Header';
 import LayoutVertical from './components/LayoutVertical';
 import UserInfo from './components/UserInfos';
 import Charts from './components/charts/Charts';
 import Nutriments from './components/Nutriments';
+import Datas from './data/formatData';
+
+console.log(Datas);
 
 function App() {
   return (

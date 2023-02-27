@@ -2,6 +2,13 @@
   background: rgba(251, 251, 251, 1);
   width: 183px;
 }
+.legend {
+  position: ABSOLUTE;
+  top: 78%;
+  left: 58%;
+  font-size: 18px;
+  width: 11%;
+}
 .legendScore {
   font-weight: 800;
 }

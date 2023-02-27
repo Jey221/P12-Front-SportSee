@@ -1,11 +1,19 @@
 .main {
   margin-left: 83px;
+  padding: 1% 6%;
 }
 .lilChart {
   display: flex;
   align-items: center;
   gap: 2%;
+  font-size: 10px;
 }
 .sectionDown {
   display: flex;
+  gap: 10%;
+}
+.Charts {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }

@@ -1,9 +1,25 @@
+.NutrimentsZone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .Nutriments {
   display: flex;
   align-items: center;
   background-color: #fbfbfb;
+  margin-bottom: 63%;
+  padding: 11% 11%;
+  width: 128px;
+  gap: 10%;
+  border-radius: 5px;
 }
 .Nutriments img {
   width: 42px;
   height: 42px;
+}
+.Nutriments span {
+  font-weight: 900;
+}
+.Nutriments p {
+  margin: 0%;
 }

@@ -12,15 +12,12 @@ function Charts() {
       </div>
       <div className="lilChart">
         <div className="duration">
-          <h2>graph durée</h2>
           <ChartDuration />
         </div>
         <div className="radar">
-          <h2>graph radar</h2>
           <ChartRadar />
         </div>
         <div className="score">
-          <h2>score</h2>
           <ChartScore />
           <Legend />
         </div>
