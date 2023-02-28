@@ -1,15 +1,8 @@
 import '../../style/charts/chartScore.css';
 import { PieChart, Pie, Cell } from 'recharts';
 import Datas from '../../data/data3.json';
-import { USER_MAIN_DATA } from '../../data/formatData';
+import { USER_MAIN_DATA, score } from '../../data/formatData';
 
-console.log(USER_MAIN_DATA[0].todayScore * 100);
-console.log(100 - USER_MAIN_DATA[0].todayScore * 100);
-const score = [
-  { value: USER_MAIN_DATA[0].todayScore * 100 },
-  { value: 100 - USER_MAIN_DATA[0].todayScore * 100 },
-];
-console.log(score);
 const COLORS = ['#ef0e0e', '#FBFBFB'];
 
 export function Legend() {
@@ -28,9 +21,12 @@ export default function ChartScore() {
         data={score}
         cx={90}
         cy={100}
+        startAngle={100}
+        endAngle={2000}
         innerRadius={60}
         outerRadius={80}
         paddingAngle={5}
+        cornerRadius={10}
         dataKey="value"
       >
         <p></p>

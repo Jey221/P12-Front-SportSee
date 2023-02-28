@@ -9,10 +9,9 @@ import {
   Legend,
 } from 'recharts';
 
-import Datas from '../../data/data.json';
+// import Datas from '../../data/data.json';
 import { USER_ACTIVITY } from '../../data/formatData';
-console.log(USER_ACTIVITY[0].sessions);
-console.log(Datas);
+
 export default function ChartActivity() {
   return (
     <BarChart

@@ -3,8 +3,6 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 // import Datas from '../../data/data2.json';
 import { USER_PERFORMANCE } from '../../data/formatData';
 
-console.log(USER_PERFORMANCE[0].kind);
-
 export default function App() {
   return (
     <RadarChart
