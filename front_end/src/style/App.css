@@ -4,7 +4,7 @@
 }
 .lilChart {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 2%;
   font-size: 10px;
 }

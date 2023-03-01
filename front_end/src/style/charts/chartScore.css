@@ -1,12 +1,15 @@
 .score {
   background: rgba(251, 251, 251, 1);
   width: 183px;
+  height: 190px;
 }
 .legend {
   position: relative;
-  top: -100px;
-  left: 31%;
-  font-size: 18px;
+  top: -114px;
+  left: 37%;
+  font-size: 17px;
+  width: 14%;
+  text-align: center;
 }
 .legendScore {
   font-weight: 800;
