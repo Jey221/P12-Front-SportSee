@@ -1,21 +1,5 @@
-import { useEffect, useState } from 'react';
-import Datas from '../data/mockData.json';
+import Datas from './mockData.json';
 
-export default function MockData() {
-  const [data, setData] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        'http://127.0.0.1:5500/front_end/src/data/mockData.json'
-      );
-      const data = await response.json();
-      console.log(data);
-      setData(data.data);
-    };
-    fetchData();
-  }, []);
-  return data;
-}
 // recupération des datas du json
 const USER_MAIN_DATA = Datas.USER_MAIN_DATA;
 const USER_ACTIVITY = Datas.USER_ACTIVITY;

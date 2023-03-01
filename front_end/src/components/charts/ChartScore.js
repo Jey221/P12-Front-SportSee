@@ -1,5 +1,5 @@
 import '../../style/charts/chartScore.css';
-import { PieChart, Pie } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getUserInfos } from '../../data/getData';
@@ -37,6 +37,8 @@ export default function ChartScore() {
   }, []);
   const score = datas.todayScore || datas.score;
   const graphRadar = [{ value: score * 100 }, { value: 100 - score * 100 }];
+  const COLORS = ['#ef0e0e', '#FBFBFB'];
+
   return (
     <PieChart width={183} height={190}>
       <Pie
@@ -50,9 +52,11 @@ export default function ChartScore() {
         paddingAngle={5}
         cornerRadius={10}
         dataKey="value"
+        fill="#ef0e0e"
       >
-        <p></p>
-        {graphRadar.map((index) => console.log(index))}
+        {graphRadar.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
       </Pie>
     </PieChart>
   );
