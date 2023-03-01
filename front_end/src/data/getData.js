@@ -12,16 +12,36 @@ export const getUserInfos = async (id) => {
   }
 };
 
-/* export const getNutriments = async (id) => {
-  console.log('id', id);
+export const getActivity = async (id) => {
   try {
-    const result = await axios.get(`http://localhost:3000/user${id}`);
+    const result = await axios.get(`http://localhost:3000/user${id}/activity`);
     return result.data;
   } catch (e) {
     console.log(e);
   }
 };
- */
+
+export const getAverage = async (id) => {
+  try {
+    const result = await axios.get(
+      `http://localhost:3000/user${id}/average-sessions`
+    );
+    return result.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getPerformance = async (id) => {
+  try {
+    const result = await axios.get(
+      `http://localhost:3000/user${id}/performance`
+    );
+    return result.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 /* import { useState, useEffect } from 'react';
 

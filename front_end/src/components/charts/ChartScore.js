@@ -1,26 +1,46 @@
 import '../../style/charts/chartScore.css';
-import { PieChart, Pie, Cell } from 'recharts';
-import Datas from '../../data/data3.json';
-import { USER_MAIN_DATA, score } from '../../data/formatData';
-
-const COLORS = ['#ef0e0e', '#FBFBFB'];
+import { PieChart, Pie } from 'recharts';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getUserInfos } from '../../data/getData';
 
 export function Legend() {
+  const id = useLocation().pathname;
+  const [datas, setDatas] = useState([]);
+  useEffect(() => {
+    async function infoLoad(id) {
+      const datas = await getUserInfos(id);
+      setDatas(datas.data);
+    }
+    infoLoad(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const score = datas.todayScore || datas.score;
   return (
     <div className="legend">
-      <span className="legendScore">
-        {USER_MAIN_DATA[0].todayScore * 100}%{' '}
-      </span>
+      <span className="legendScore">{score * 100}%</span>
       de votre objectif
     </div>
   );
 }
 
 export default function ChartScore() {
+  const id = useLocation().pathname;
+  const [datas, setDatas] = useState([]);
+  useEffect(() => {
+    async function infoLoad(id) {
+      const datas = await getUserInfos(id);
+      setDatas(datas.data);
+    }
+    infoLoad(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const score = datas.todayScore || datas.score;
+  const graphRadar = [{ value: score * 100 }, { value: 100 - score * 100 }];
   return (
     <PieChart width={183} height={190}>
       <Pie
-        data={score}
+        data={graphRadar}
         cx={90}
         cy={100}
         startAngle={100}
@@ -32,59 +52,8 @@ export default function ChartScore() {
         dataKey="value"
       >
         <p></p>
-        {Datas.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-        ))}
+        {graphRadar.map((index) => console.log(index))}
       </Pie>
     </PieChart>
   );
 }
-
-/* 
-V2 avec CustomActiveShapePieChart
-import '../../style/charts/chartScore.css';
-import React, { useState } from 'react';
-import { PieChart, Pie, Sector } from 'recharts';
-import Datas from '../../data/data3.json';
-
-export default function ChartScore() {
-  const [activeIndex] = useState(0);
-
-  return (
-    <PieChart width={400} height={400}>
-      <Pie
-        activeIndex={activeIndex}
-        activeShape={renderActiveShape}
-        data={Datas}
-        cx={200}
-        cy={200}
-        innerRadius={60}
-        outerRadius={80}
-        fill="#8884d8"
-        dataKey="value"
-      />
-    </PieChart>
-  );
-}
-
-const renderActiveShape = (props) => {
-  const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } =
-    props;
-  return (
-    <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
-        lol
-      </text>
-      <Sector
-        cx={cx}
-        cy={cy}
-        innerRadius={innerRadius}
-        outerRadius={outerRadius}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        fill={fill}
-      />
-    </g>
-  );
-};
- */

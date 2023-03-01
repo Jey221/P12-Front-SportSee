@@ -9,15 +9,27 @@ import {
   Rectangle,
 } from 'recharts';
 import PropTypes from 'prop-types';
-// import Datas from '../../data/data.json';
-import { USER_AVERAGE_SESSIONS } from '../../data/formatData';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getAverage } from '../../data/getData';
 
 export default function ChartDuration() {
+  const id = useLocation().pathname;
+  const [datas, setDatas] = useState([]);
+  useEffect(() => {
+    async function infoLoad(id) {
+      const datas = await getAverage(id);
+      setDatas(datas.data.sessions);
+    }
+    infoLoad(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <LineChart
       width={183}
       height={190}
-      data={USER_AVERAGE_SESSIONS[0].sessions}
+      data={datas}
       margin={{
         top: 5,
         right: 30,

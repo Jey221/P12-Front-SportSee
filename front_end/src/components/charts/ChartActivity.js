@@ -8,16 +8,28 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
-
-// import Datas from '../../data/data.json';
-import { USER_ACTIVITY } from '../../data/formatData';
+import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getActivity } from '../../data/getData';
 
 export default function ChartActivity() {
+  const id = useLocation().pathname;
+  const [datas, setDatas] = useState([]);
+  useEffect(() => {
+    async function infoLoad(id) {
+      const datas = await getActivity(id);
+      setDatas(datas.data.sessions);
+    }
+    infoLoad(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // console.log('index', datas.indexOf({ datas }));
+
   return (
     <BarChart
       width={550}
       height={223}
-      data={USER_ACTIVITY[0].sessions}
+      data={datas}
       margin={{
         top: 5,
         right: 30,
@@ -27,7 +39,12 @@ export default function ChartActivity() {
     >
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
       <XAxis dataKey="day" axisLine={false} tickLine={false} />
-      <YAxis orientation="right" axisLine={false} tickLine={false} />
+      <YAxis
+        dataKey="kilogram"
+        orientation="right"
+        axisLine={false}
+        tickLine={false}
+      />
       <Tooltip
         content={<CustomTooltip />}
         wrapperStyle={{ outlineStyle: 'none' }}
