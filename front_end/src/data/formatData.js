@@ -29,8 +29,6 @@ const score = [
   { value: 100 - USER_MAIN_DATA[0].todayScore * 100 },
 ];
 
-// const kinds = USER_PERFORMANCE[0].kind;
-
 export {
   USER_MAIN_DATA,
   USER_ACTIVITY,

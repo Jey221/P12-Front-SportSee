@@ -8,7 +8,9 @@ const COLORS = ['#ef0e0e', '#FBFBFB'];
 export function Legend() {
   return (
     <div className="legend">
-      <span className="legendScore">{USER_MAIN_DATA[0].todayScore * 100}%</span>{' '}
+      <span className="legendScore">
+        {USER_MAIN_DATA[0].todayScore * 100}%{' '}
+      </span>
       de votre objectif
     </div>
   );

@@ -1,20 +1,23 @@
 import '../style/UserInfo.css';
-import { USER_MAIN_DATA } from '../data/formatData';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getUserInfos } from '../data/getData';
 
 function UserInfo() {
-  const location = useLocation();
-  console.log(location.pathname);
+  const id = useLocation().pathname;
+  const [datas, setDatas] = useState([]);
+  useEffect(() => {
+    async function infoLoad(id) {
+      const datas = await getUserInfos(id);
+      setDatas(datas.data.userInfos.firstName);
+    }
+    infoLoad(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <div className="UserInfo">
       <h2>
-        Bonjour{' '}
-        <span>
-          {
-            USER_MAIN_DATA[location.pathname === '/12' ? 0 : 1].userInfos
-              .firstName
-          }
-        </span>
+        Bonjour <span>{datas}</span>
       </h2>
       <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>

@@ -3,11 +3,10 @@
   width: 183px;
 }
 .legend {
-  position: ABSOLUTE;
-  top: 78%;
-  left: 58%;
+  position: relative;
+  top: -100px;
+  left: 31%;
   font-size: 18px;
-  width: 11%;
 }
 .legendScore {
   font-weight: 800;
