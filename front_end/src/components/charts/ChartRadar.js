@@ -15,7 +15,12 @@ export default function App() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  console.log('datas.data', datas.data);
+  function customTick(kind) {
+    console.log('kind', kind);
+    console.log('datas', datas.kind[kind]);
+    return datas.kind[kind];
+  }
   return (
     <RadarChart
       cx={90}
@@ -27,7 +32,7 @@ export default function App() {
       style={{ background: '#282D30' }}
     >
       <PolarGrid radialLines={false} />
-      <PolarAngleAxis dataKey="kind" />
+      <PolarAngleAxis dataKey="kind" tickFormatter={customTick} />
       <Radar dataKey="value" fill="#FF0101B2" fillOpacity={0.6} />
     </RadarChart>
   );
