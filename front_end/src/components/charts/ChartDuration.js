@@ -13,6 +13,14 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAverage } from '../../data/getData';
 
+export function TitleChart() {
+  return (
+    <div className="linechart__title">
+      <p>Durée moyenne des sessions</p>
+    </div>
+  );
+}
+
 export default function ChartDuration() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);

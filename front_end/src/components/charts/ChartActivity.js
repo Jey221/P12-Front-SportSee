@@ -92,35 +92,3 @@ function CustomTooltip({ active, payload }) {
   }
   return null;
 }
-
-/*   console.log('datas', datas);
-  let dayList = [];
-  let index = [];
-  /*
-  datas.forEach((days) => {
-    console.log('days.day', days.day);
-
-    dayList.push(days.day);
-    index.push(dayList.indexOf(days.day) + 1);
-    console.log('index', dayList.indexOf(days.day));
-  });
-  console.log('new array', dayList);
-  console.log('new index', index);
-  
- 
-  function formatXAxis(day) {
-    console.log(day);
-    /*     
-    datas.forEach((days) => {
-      console.log('days.day', days.day);
-
-      dayList.push(days.day);
-      index.push(dayList.indexOf(days.day) + 1);
-      console.log('index', dayList.indexOf(days.day));
-    });
-    return index;
- 
-  }
-  console.log('new array', dayList);
-  console.log('new index', index);
- */

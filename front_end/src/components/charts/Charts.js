@@ -1,8 +1,7 @@
 import ChartActivity from './ChartActivity';
-import ChartDuration from './ChartDuration';
+import ChartDuration, { TitleChart } from './ChartDuration';
 import ChartRadar from './ChartRadar';
 import ChartScore, { Legend } from './ChartScore';
-
 function Charts() {
   return (
     <div className="Charts">
@@ -12,6 +11,7 @@ function Charts() {
       </div>
       <div className="lilChart">
         <div className="duration">
+          <TitleChart />
           <ChartDuration />
         </div>
         <div className="radar">

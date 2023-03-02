@@ -1,5 +1,5 @@
 #duration tspan {
-  fill: #ffffff;
+  fill: #ffffffb9;
   font-size: 9px;
 }
 .tooltipDuration {
@@ -10,4 +10,11 @@
   background-color: white;
   color: black;
   align-items: center;
+}
+.linechart__title {
+  position: absolute;
+  left: 15%;
+  font-size: 9px;
+  z-index: 1;
+  color: #ffffff94;
 }

@@ -15,18 +15,15 @@ export default function App() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log('datas.data', datas.data);
   function customTick(kind) {
-    console.log('kind', kind);
-    console.log('datas', datas.kind[kind]);
     return datas.kind[kind];
   }
   return (
     <RadarChart
       cx={90}
       cy={100}
-      outerRadius={60}
-      width={183}
+      outerRadius={55}
+      width={190}
       height={190}
       data={datas.data}
       style={{ background: '#282D30' }}

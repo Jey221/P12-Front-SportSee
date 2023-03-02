@@ -3,8 +3,6 @@ import axios from 'axios';
 
 // récupération des datas pour les infos
 export const getUserInfos = async (id) => {
-  console.log('id', id);
-
   try {
     const result = await axios.get(`http://localhost:3000/user${id}`);
     return result.data;
