@@ -30,28 +30,28 @@ function Nutriments() {
         <img src={caloriesIcon} alt="calories icon" />
         <div>
           <span>{kcal} kcal</span>
-          <p>calories</p>
+          <p>Calories</p>
         </div>
       </div>
       <div className="Nutriments">
         <img src={proteinIcon} alt="proteines icon" />
         <div>
           <span>{datas.proteinCount}g</span>
-          <p>proteines</p>
+          <p>Proteines</p>
         </div>
       </div>
       <div className="Nutriments">
         <img src={carbsIcon} alt="glucides icon" />
         <div>
           <span>{datas.carbohydrateCount}g</span>
-          <p>glucides</p>
+          <p>Glucides</p>
         </div>
       </div>
       <div className="Nutriments">
         <img src={fatIcon} alt="lipides icon" />
         <div>
           <span>{datas.lipidCount}g</span>
-          <p>lipides</p>
+          <p>Lipides</p>
         </div>
       </div>
     </div>

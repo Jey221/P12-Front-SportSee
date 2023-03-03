@@ -15,7 +15,7 @@ export default function App() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  function customTick(kind) {
+  function customTick(kind, words) {
     return datas.kind[kind];
   }
   return (
