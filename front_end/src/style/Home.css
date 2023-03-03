@@ -1,0 +1,24 @@
+.mainHome {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 20%;
+}
+.mainHome a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+.profil {
+  background-color: red;
+  width: 195px;
+  padding: 21%;
+  border-radius: 50%;
+  height: 195px;
+}
+.profil h2 {
+  top: 50%;
+  position: absolute;
+}

@@ -1,16 +1,26 @@
 import './style/App.css';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import LayoutVertical from './components/LayoutVertical';
-import UserInfo from './components/UserInfos';
-import Charts from './components/charts/Charts';
-import Nutriments from './components/Nutriments';
+import Home from './page/Home';
+import Profil from './page/Profil';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <LayoutVertical />
-      <div className="main">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:userId" element={<Profil />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
+
+/*       <div className="main">
         <section className="sectionUp">
           <UserInfo />
         </section>
@@ -19,8 +29,4 @@ function App() {
           <Nutriments />
         </section>
       </div>
-    </div>
-  );
-}
-
-export default App;
+ */
