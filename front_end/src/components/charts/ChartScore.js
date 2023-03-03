@@ -18,8 +18,11 @@ export function Legend() {
   const score = datas.todayScore || datas.score;
   return (
     <div className="legend">
-      <span className="legendScore">{score * 100}%</span>
-      de votre objectif
+      <div>
+        <span className="legendScore">{score * 100}% </span>
+        <br />
+        de votre objectif
+      </div>
     </div>
   );
 }
@@ -40,14 +43,14 @@ export default function ChartScore() {
   const COLORS = ['#ef0e0e', '#FBFBFB'];
 
   return (
-    <PieChart width={183} height={190}>
+    <PieChart width={200} height={207}>
       <Pie
         data={graphRadar}
         cx={90}
         cy={100}
         startAngle={100}
         endAngle={2000}
-        innerRadius={60}
+        innerRadius={65}
         outerRadius={80}
         paddingAngle={5}
         cornerRadius={10}
@@ -58,6 +61,18 @@ export default function ChartScore() {
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
+      <Pie
+        data={''}
+        fill="red"
+        cx={90}
+        cy={100}
+        startAngle={100}
+        endAngle={2000}
+        innerRadius={60}
+        outerRadius={80}
+        paddingAngle={5}
+        cornerRadius={10}
+      />
     </PieChart>
   );
 }

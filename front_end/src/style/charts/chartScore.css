@@ -1,16 +1,29 @@
 .score {
   background: rgba(251, 251, 251, 1);
-  width: 183px;
-  height: 190px;
+  width: 200px;
+  height: 207px;
 }
 .legend {
   position: relative;
-  top: -114px;
-  left: 37%;
+  top: -167px;
+  left: 15%;
   font-size: 17px;
-  width: 14%;
+  width: 130px;
+  height: 130px;
   text-align: center;
+  background-color: white;
+  border-radius: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  color: #74798c;
+}
+.legend div {
+  width: 60%;
 }
 .legendScore {
-  font-weight: 800;
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
 }

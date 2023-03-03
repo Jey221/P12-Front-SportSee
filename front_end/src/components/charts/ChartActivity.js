@@ -12,6 +12,10 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getActivity } from '../../data/getData';
 
+function renderColor(value) {
+  return <span style={{ color: '#74798c' }}>{value}</span>;
+}
+
 export default function ChartActivity() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
@@ -28,13 +32,13 @@ export default function ChartActivity() {
   }
   return (
     <BarChart
-      width={550}
+      width={600}
       height={223}
       data={datas}
       margin={{
         top: 5,
-        right: 30,
-        left: 20,
+        right: 10,
+        left: 10,
         bottom: 5,
       }}
     >
@@ -60,12 +64,17 @@ export default function ChartActivity() {
         content={<CustomTooltip />}
         wrapperStyle={{ outlineStyle: 'none' }}
       />
-      <Legend verticalAlign="top" align="right" iconType="circle" />
+      <Legend
+        verticalAlign="top"
+        align="right"
+        iconType="circle"
+        formatter={renderColor}
+      />
       <Bar
         yAxisId={1}
         dataKey="kilogram"
         barSize={10}
-        fill="red"
+        fill="black"
         radius={[10, 10, 0, 0]}
         name="Poids (kg)"
       />
@@ -73,7 +82,7 @@ export default function ChartActivity() {
         yAxisId={2}
         dataKey="calories"
         barSize={10}
-        fill="black"
+        fill="red"
         radius={[10, 10, 0, 0]}
         name="Calories Brûlées (kCal)"
       />

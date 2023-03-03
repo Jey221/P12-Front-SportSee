@@ -54,14 +54,14 @@ export default function ChartDuration() {
   }
   return (
     <LineChart
-      width={183}
-      height={190}
+      width={200}
+      height={207}
       data={datas}
       margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
+        top: 30,
+        right: 10,
+        left: 10,
+        bottom: 1,
       }}
       style={{ backgroundColor: 'red' }}
     >
@@ -128,7 +128,7 @@ function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     return (
       <div className="tooltipDuration">
-        <h4>{payload[0].value}</h4>
+        <h4>{payload[0].value} min</h4>
       </div>
     );
   }

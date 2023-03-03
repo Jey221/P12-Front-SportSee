@@ -20,11 +20,11 @@ export default function App() {
   }
   return (
     <RadarChart
-      cx={90}
-      cy={100}
-      outerRadius={55}
-      width={190}
-      height={190}
+      cx={95}
+      cy={110}
+      outerRadius={60}
+      width={200}
+      height={207}
       data={datas.data}
       style={{ background: '#282D30' }}
     >

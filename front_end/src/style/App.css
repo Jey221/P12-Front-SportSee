@@ -1,3 +1,6 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
 .main {
   margin-left: 83px;
   padding: 1% 6%;
@@ -10,10 +13,13 @@
 }
 .sectionDown {
   display: flex;
-  gap: 10%;
+  gap: 5%;
 }
 .Charts {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+}
+.recharts-wrapper {
+  border-radius: 5px;
 }

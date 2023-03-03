@@ -19,14 +19,3 @@ function App() {
 }
 
 export default App;
-
-/*       <div className="main">
-        <section className="sectionUp">
-          <UserInfo />
-        </section>
-        <section className="sectionDown">
-          <Charts />
-          <Nutriments />
-        </section>
-      </div>
- */
