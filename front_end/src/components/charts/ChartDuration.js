@@ -90,6 +90,7 @@ export default function ChartDuration() {
         dataKey="sessionLength"
         stroke="white"
         dot={{ r: 0 }}
+        activeDot={{ stroke: '#FFFFFF33', strokeWidth: 15, r: 5 }}
         strokeWidth={2}
       />
     </LineChart>
