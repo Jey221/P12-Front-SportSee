@@ -22,7 +22,7 @@ export default function App() {
     <RadarChart
       cx={95}
       cy={110}
-      outerRadius={60}
+      outerRadius={55}
       width={200}
       height={207}
       data={datas.data}

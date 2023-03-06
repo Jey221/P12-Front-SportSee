@@ -74,7 +74,7 @@ export default function ChartActivity() {
         yAxisId={1}
         dataKey="kilogram"
         barSize={10}
-        fill="black"
+        fill="#282D30"
         radius={[10, 10, 0, 0]}
         name="Poids (kg)"
       />

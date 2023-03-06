@@ -58,10 +58,10 @@ export default function ChartDuration() {
       height={207}
       data={datas}
       margin={{
-        top: 30,
-        right: 10,
-        left: 10,
-        bottom: 1,
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
       }}
       style={{ backgroundColor: 'red' }}
     >
@@ -77,6 +77,7 @@ export default function ChartDuration() {
         fill="white"
         id="duration"
         tickFormatter={customTick}
+        // padding={{ left: 10, right: 10 }}
       />
       <YAxis hide={true} axisLine={false} tickLine={false} />
       <Tooltip
@@ -104,7 +105,7 @@ const CustomCursor = (prop) => {
   return (
     <Rectangle
       width={rectWidth}
-      height={263}
+      height={210}
       x={X}
       y={Y}
       style={{ background: 'red', opacity: 0.1 }}

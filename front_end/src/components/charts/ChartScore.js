@@ -54,6 +54,7 @@ export default function ChartScore() {
         outerRadius={80}
         paddingAngle={5}
         cornerRadius={10}
+        stroke={'#FBFBFB'}
         dataKey="value"
         fill="#ef0e0e"
       >
@@ -61,18 +62,6 @@ export default function ChartScore() {
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
       </Pie>
-      <Pie
-        data={''}
-        fill="red"
-        cx={90}
-        cy={100}
-        startAngle={100}
-        endAngle={2000}
-        innerRadius={60}
-        outerRadius={80}
-        paddingAngle={5}
-        cornerRadius={10}
-      />
     </PieChart>
   );
 }
