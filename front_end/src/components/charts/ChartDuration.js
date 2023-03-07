@@ -13,6 +13,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAverage } from '../../data/getData';
 
+// Chart title
 export function TitleChart() {
   return (
     <div className="linechart__title">
@@ -28,6 +29,8 @@ export default function ChartDuration() {
     async function infoLoad(id) {
       const datas = await getAverage(id);
       setDatas(datas.data.sessions);
+      datas.data.sessions.unshift({ day: 7, sessionLength: 10 });
+      datas.data.sessions.push({ day: 1, sessionLength: 10 });
     }
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -58,17 +61,19 @@ export default function ChartDuration() {
       height={207}
       data={datas}
       margin={{
-        top: 0,
-        right: 0,
-        left: 0,
+        top: 50,
+        right: -5,
+        left: -20,
         bottom: 0,
       }}
       style={{ backgroundColor: 'red' }}
+      id="l1"
     >
       <CartesianGrid
         strokeDasharray="3 3"
         vertical={false}
         horizontal={false}
+        id="l2"
       />
       <XAxis
         dataKey="day"
@@ -77,7 +82,6 @@ export default function ChartDuration() {
         fill="white"
         id="duration"
         tickFormatter={customTick}
-        // padding={{ left: 10, right: 10 }}
       />
       <YAxis hide={true} axisLine={false} tickLine={false} />
       <Tooltip
@@ -92,15 +96,20 @@ export default function ChartDuration() {
         dot={{ r: 0 }}
         activeDot={{ stroke: '#FFFFFF33', strokeWidth: 15, r: 5 }}
         strokeWidth={2}
+        id="l3"
       />
     </LineChart>
   );
 }
 
+/**
+ * changing the cursor
+ * @param {*} prop
+ * @returns
+ */
 const CustomCursor = (prop) => {
   const { width, points } = prop;
   const X = points[0].x;
-  const Y = points[0].y;
   const distanceToRight = width - X;
   const rectWidth = Math.min(distanceToRight, 500);
   return (
@@ -108,12 +117,15 @@ const CustomCursor = (prop) => {
       width={rectWidth}
       height={210}
       x={X}
-      y={Y}
+      y={0}
       style={{ background: 'red', opacity: 0.1 }}
     />
   );
 };
 
+/**
+ * cursor implementation
+ */
 CustomCursor.propTypes = {
   prop: PropTypes.shape({
     width: PropTypes.number.isRequired,
@@ -126,6 +138,11 @@ CustomCursor.propTypes = {
   }),
 };
 
+/**
+ *
+ * @active {*} param0
+ * @payload
+ */
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     return (

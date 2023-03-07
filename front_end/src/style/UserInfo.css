@@ -1,3 +1,7 @@
+.UserInfo h2 {
+  font-size: 41px;
+  margin-bottom: 0%;
+}
 .UserInfo h2 span {
   color: #ff0101;
 }

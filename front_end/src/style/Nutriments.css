@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 5%;
+  padding-top: 1%;
 }
 .Nutriments {
   display: flex;

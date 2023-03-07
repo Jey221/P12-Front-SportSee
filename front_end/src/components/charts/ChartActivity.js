@@ -11,7 +11,10 @@ import {
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getActivity } from '../../data/getData';
-
+/**
+ * Change the color of the legend
+ * @value {string} legend value
+ */
 function renderColor(value) {
   return <span style={{ color: '#74798c' }}>{value}</span>;
 }
@@ -90,6 +93,11 @@ export default function ChartActivity() {
   );
 }
 
+/**
+ * Custom legend box
+ * @active {}
+ * @payload {}
+ */
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {
     return (

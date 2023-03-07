@@ -1,6 +1,12 @@
 #duration tspan {
   fill: #ffffffb9;
-  font-size: 9px;
+  font-size: 11px;
+}
+#l1 {
+  width: 215px;
+}
+.recharts-wrapper {
+  overflow: hidden;
 }
 .tooltipDuration {
   width: 100%;
@@ -17,4 +23,5 @@
   font-size: 13px;
   z-index: 1;
   color: #ffffff94;
+  width: 135px;
 }

@@ -4,6 +4,10 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getPerformance } from '../../data/getData';
 
+/**
+ *
+ *
+ */
 export default function App() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
