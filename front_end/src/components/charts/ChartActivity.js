@@ -15,12 +15,17 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getActivity } from '../../data/getData';
 /**
- * Change the color of the legend
- * @value {string} legend value
+ * It takes a value and returns a span with the value and a color of #74798c.
+ * @param value - The value of the cell.
+ * @returns A React element.
  */
 function renderColor(value) {
   return <span style={{ color: '#74798c' }}>{value}</span>;
 }
+/**
+ * It renders a bar chart with two bars, one for weight and one for calories
+ * @returns An array of objects.
+ */
 export default function ChartActivity() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
@@ -33,6 +38,11 @@ export default function ChartActivity() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  /**
+   * It takes a string in the format "YYYY-MM-DD" and returns the day of the month as a number
+   * @param day - The day of the month.
+   * @returns The last two digits of the day.
+   */
   function customTick(day) {
     return Number(day.slice(8));
   }
@@ -97,11 +107,9 @@ export default function ChartActivity() {
     </BarChart>
   );
 }
-
 /**
- * Custom legend box
- * @active {}
- * @payload {}
+ * If the active prop is true and the payload prop is not null, then return a div with two h4 elements.
+ * @returns The return value is a React component.
  */
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {

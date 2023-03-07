@@ -10,7 +10,11 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getUserInfos } from '../data/getData';
 
-// fct mise en place des nutriments en fonction id
+/**
+ * I'm using the useEffect hook to load data from an API, and then I'm using the useState hook to set
+ * the data to a state.
+ * @returns An array of objects.
+ */
 function Nutriments() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);

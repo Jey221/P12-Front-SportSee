@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 
+/**
+ * It returns a div with four links.
+ * @returns A React component.
+ */
 function NavHeader() {
   return (
     <div className="NavHeader">

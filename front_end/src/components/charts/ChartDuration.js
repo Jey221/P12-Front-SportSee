@@ -16,7 +16,11 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAverage } from '../../data/getData';
 
-// Chart title
+/**
+ * It returns a div with a className of linechart__title and a paragraph with the text "Durée moyenne
+ * des sessions".
+ * @returns A function that returns a div with a paragraph inside.
+ */
 export function TitleChart() {
   return (
     <div className="linechart__title">
@@ -25,6 +29,10 @@ export function TitleChart() {
   );
 }
 
+/**
+ * It's a React component that renders a line chart
+ * @returns A React component.
+ */
 export default function ChartDuration() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
@@ -110,9 +118,16 @@ export default function ChartDuration() {
 }
 
 /**
- * changing the cursor
- * @param {*} prop
- * @returns
+ * It takes the width of the chart and the points of the cursor and returns a rectangle that is 500px
+ * wide or the width of the chart, whichever is smaller
+ * @param prop - The prop object contains the following properties:
+ * @returns A custom cursor that is a rectangle.
+ */
+/**
+ * It takes the width of the chart and the points of the cursor and returns a rectangle that is 500px
+ * wide or the width of the chart, whichever is smaller
+ * @param prop - The prop object contains the following properties:
+ * @returns A custom cursor that is a rectangle.
  */
 const CustomCursor = (prop) => {
   const { width, points } = prop;
@@ -130,9 +145,7 @@ const CustomCursor = (prop) => {
   );
 };
 
-/**
- * cursor implementation
- */
+/* A prop type checker. It is a way to check if the prop is of the correct type. */
 CustomCursor.propTypes = {
   prop: PropTypes.shape({
     width: PropTypes.number.isRequired,
@@ -146,9 +159,10 @@ CustomCursor.propTypes = {
 };
 
 /**
- *custom Legend
- * @active {*} param0
- * @payload
+ * If the active prop is true and the payload prop is not null and the length of the payload prop is
+ * greater than 0, then return a div with a className of tooltipDuration and a h4 tag with the value of
+ * the first item in the payload array.
+ * @returns The return is a React component.
  */
 function CustomTooltip({ active, payload }) {
   if (active && payload && payload.length) {

@@ -8,8 +8,14 @@ import { useEffect, useState } from 'react';
 import { getUserInfos } from '../../data/getData';
 
 /**
- * create legend
- * @returns legend
+ * UseEffect(() =&gt; {
+ *     async function infoLoad(id) {
+ *       const datas = await getUserInfos(id);
+ *       setDatas(datas.data);
+ *     }
+ *     infoLoad(id);
+ *     // eslint-disable-next-line react-hooks/exhaustive-deps
+ *   }, []);
  */
 export function Legend() {
   const id = useLocation().pathname;
@@ -39,6 +45,10 @@ export function Legend() {
   );
 }
 
+/**
+ * It's a React component that renders a pie chart
+ * @returns A React component.
+ */
 export default function ChartScore() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);

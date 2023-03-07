@@ -5,6 +5,13 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getUserInfos } from '../data/getData';
 
+/**
+ * The useEffect hook is called when the component is mounted and when the component is updated. The
+ * second argument is an array of dependencies. If the array is empty, the effect is only called when
+ * the component is mounted. If the array contains a value, the effect is called when the component is
+ * mounted and when the value in the array changes.
+ * @returns The data is being returned as an object.
+ */
 function UserInfo() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);

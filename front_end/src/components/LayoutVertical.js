@@ -6,6 +6,10 @@ import icon2 from '../assets/iconsLayout/icon2.png';
 import icon3 from '../assets/iconsLayout/icon3.png';
 import icon4 from '../assets/iconsLayout/icon4.png';
 
+/**
+ * LayoutVertical is a function that returns a div with a section and a p tag.
+ * @returns A React component.
+ */
 function LayoutVertical() {
   return (
     <div className="LayoutVertical">

@@ -7,6 +7,10 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getPerformance } from '../../data/getData';
 
+/**
+ * It's a React component that renders a RadarChart using data from an API call.
+ * @returns An array of objects.
+ */
 export default function App() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
@@ -20,10 +24,12 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   /**
-   * custom tick
-   * @param {string} kind
-   * @param {string} words
-   * @returns
+   * Function customTick(kind, words) {
+   *     return datas.kind[kind];
+   *   }
+   * @param kind - the kind of tick you want to create.
+   * @param words - an array of words to be displayed
+   * @returns The value of the key in the object.
    */
   function customTick(kind, words) {
     return datas.kind[kind];
