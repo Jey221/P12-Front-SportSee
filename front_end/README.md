@@ -31,6 +31,8 @@ yarn
 
 - Start the application
 
+- Start the back_end
+
 ```bash
 npm run start
 # or
@@ -38,6 +40,16 @@ npm start
 # with Yarn
 yarn start
 ```
+
+- Start the front_end
+
+```bash
+npm run start
+# or
+npm start
+# with Yarn
+yarn start
+
 
 ### Added dependencies
 
@@ -55,3 +67,4 @@ dev dependencies:
 ## Backend
 
 [Repository du backend](https://github.com/Jey221/P12-SportSee.git)
+```
