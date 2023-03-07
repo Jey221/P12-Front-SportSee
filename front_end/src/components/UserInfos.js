@@ -1,4 +1,6 @@
+// formatting css
 import '../style/UserInfo.css';
+// hooks
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getUserInfos } from '../data/getData';
@@ -6,6 +8,7 @@ import { getUserInfos } from '../data/getData';
 function UserInfo() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  // load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getUserInfos(id);

@@ -1,16 +1,16 @@
+// formatting css
 import '../../style/charts/chartRadar.css';
+// recharts elements
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
+//hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getPerformance } from '../../data/getData';
 
-/**
- *
- *
- */
 export default function App() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  // load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getPerformance(id);
@@ -19,6 +19,12 @@ export default function App() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  /**
+   * custom tick
+   * @param {string} kind
+   * @param {string} words
+   * @returns
+   */
   function customTick(kind, words) {
     return datas.kind[kind];
   }

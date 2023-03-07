@@ -1,4 +1,6 @@
+// formatting css
 import '../../style/charts/chartDuration.css';
+// recharts elements
 import {
   LineChart,
   Line,
@@ -9,6 +11,7 @@ import {
   Rectangle,
 } from 'recharts';
 import PropTypes from 'prop-types';
+//hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getAverage } from '../../data/getData';
@@ -25,6 +28,7 @@ export function TitleChart() {
 export default function ChartDuration() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  // load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getAverage(id);
@@ -35,6 +39,11 @@ export default function ChartDuration() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  /**
+   * custom data in XAxis
+   * @param {number} day
+   * @returns days
+   */
   function customTick(day) {
     const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
     // eslint-disable-next-line default-case
@@ -67,13 +76,12 @@ export default function ChartDuration() {
         bottom: 0,
       }}
       style={{ backgroundColor: 'red' }}
-      id="l1"
+      id="lineChart"
     >
       <CartesianGrid
         strokeDasharray="3 3"
         vertical={false}
         horizontal={false}
-        id="l2"
       />
       <XAxis
         dataKey="day"
@@ -96,7 +104,6 @@ export default function ChartDuration() {
         dot={{ r: 0 }}
         activeDot={{ stroke: '#FFFFFF33', strokeWidth: 15, r: 5 }}
         strokeWidth={2}
-        id="l3"
       />
     </LineChart>
   );
@@ -139,7 +146,7 @@ CustomCursor.propTypes = {
 };
 
 /**
- *
+ *custom Legend
  * @active {*} param0
  * @payload
  */

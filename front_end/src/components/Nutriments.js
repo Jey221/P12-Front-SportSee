@@ -1,4 +1,4 @@
-// mise en forme css
+// formatting css
 import '../style/Nutriments.css';
 // icons
 import caloriesIcon from '../assets/iconsNutriments/calories-icon.png';
@@ -14,6 +14,7 @@ import { getUserInfos } from '../data/getData';
 function Nutriments() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  // load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getUserInfos(id);
@@ -22,7 +23,7 @@ function Nutriments() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // conversion calories en kilocalories
+  // conversion calories to kilocalories
   const kcal = datas.calorieCount * 0.001;
   return (
     <div className="NutrimentsZone">

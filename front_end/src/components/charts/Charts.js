@@ -1,3 +1,4 @@
+// charts
 import ChartActivity from './ChartActivity';
 import ChartDuration, { TitleChart } from './ChartDuration';
 import ChartRadar from './ChartRadar';

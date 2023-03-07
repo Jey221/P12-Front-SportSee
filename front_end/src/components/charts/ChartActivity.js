@@ -1,4 +1,6 @@
+// formatting css
 import '../../style/charts/chartActivity.css';
+// recharts elements
 import {
   BarChart,
   Bar,
@@ -8,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
+//hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getActivity } from '../../data/getData';
@@ -18,10 +21,10 @@ import { getActivity } from '../../data/getData';
 function renderColor(value) {
   return <span style={{ color: '#74798c' }}>{value}</span>;
 }
-
 export default function ChartActivity() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  // load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getActivity(id);
@@ -73,7 +76,6 @@ export default function ChartActivity() {
         align="right"
         iconType="circle"
         iconSize={6}
-        id="bill"
         formatter={renderColor}
       />
       <Bar

@@ -1,12 +1,20 @@
+// formatting css
 import '../../style/charts/chartScore.css';
+//recharts elements
 import { PieChart, Pie, Cell } from 'recharts';
+//hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getUserInfos } from '../../data/getData';
 
+/**
+ * create legend
+ * @returns legend
+ */
 export function Legend() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  //load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getUserInfos(id);
@@ -15,6 +23,10 @@ export function Legend() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  /**
+   * standardization of scores
+   * @score {number}
+   */
   const score = datas.todayScore || datas.score;
   return (
     <div className="legend">
@@ -30,6 +42,7 @@ export function Legend() {
 export default function ChartScore() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
+  // load data
   useEffect(() => {
     async function infoLoad(id) {
       const datas = await getUserInfos(id);
@@ -38,10 +51,10 @@ export default function ChartScore() {
     infoLoad(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // formatting scores
   const score = datas.todayScore || datas.score;
   const graphRadar = [{ value: score * 100 }, { value: 100 - score * 100 }];
   const COLORS = ['#ef0e0e', '#FBFBFB'];
-
   return (
     <PieChart width={200} height={207}>
       <Pie

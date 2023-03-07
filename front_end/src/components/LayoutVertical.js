@@ -1,4 +1,6 @@
+// formatting css
 import '../style/LayoutVertical.css';
+//icons
 import icon1 from '../assets/iconsLayout/icon1.png';
 import icon2 from '../assets/iconsLayout/icon2.png';
 import icon3 from '../assets/iconsLayout/icon3.png';
