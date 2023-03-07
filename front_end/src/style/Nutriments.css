@@ -2,13 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 1%;
 }
 .Nutriments {
   display: flex;
   align-items: center;
   background-color: #fbfbfb;
-  margin-bottom: 37%;
   padding: 20% 20%;
   width: 128px;
   gap: 10%;

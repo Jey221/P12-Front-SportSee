@@ -36,13 +36,13 @@ export default function ChartActivity() {
   return (
     <BarChart
       width={600}
-      height={223}
+      height={180}
       data={datas}
       margin={{
-        top: 5,
+        top: 0,
         right: 10,
         left: 10,
-        bottom: 5,
+        bottom: 15,
       }}
     >
       <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -51,6 +51,7 @@ export default function ChartActivity() {
         axisLine={false}
         tickLine={false}
         tickFormatter={customTick}
+        tickMargin={9}
       />
       <YAxis
         yAxisId={1}
@@ -71,12 +72,14 @@ export default function ChartActivity() {
         verticalAlign="top"
         align="right"
         iconType="circle"
+        iconSize={6}
+        id="bill"
         formatter={renderColor}
       />
       <Bar
         yAxisId={1}
         dataKey="kilogram"
-        barSize={10}
+        barSize={9}
         fill="#282D30"
         radius={[10, 10, 0, 0]}
         name="Poids (kg)"
@@ -84,10 +87,10 @@ export default function ChartActivity() {
       <Bar
         yAxisId={2}
         dataKey="calories"
-        barSize={10}
+        barSize={9}
         fill="red"
         radius={[10, 10, 0, 0]}
-        name="Calories Brûlées (kCal)"
+        name="Calories brûlées (kCal)"
       />
     </BarChart>
   );

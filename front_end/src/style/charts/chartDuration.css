@@ -2,11 +2,12 @@
   fill: #ffffffb9;
   font-size: 11px;
 }
+.duration {
+  overflow: hidden;
+  width: 226px;
+}
 #l1 {
   width: 215px;
-}
-.recharts-wrapper {
-  overflow: hidden;
 }
 .tooltipDuration {
   width: 100%;
@@ -19,7 +20,7 @@
 }
 .linechart__title {
   position: absolute;
-  left: 15%;
+  padding-left: 2%;
   font-size: 13px;
   z-index: 1;
   color: #ffffff94;
