@@ -34,6 +34,8 @@ yarn
 - Start the back_end
 
 ```bash
+cd back_end
+# and
 npm run start
 # or
 npm start
@@ -44,6 +46,8 @@ yarn start
 - Start the front_end
 
 ```bash
+cd front_end
+# and
 npm run start
 # or
 npm start

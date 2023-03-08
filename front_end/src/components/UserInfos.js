@@ -3,6 +3,7 @@ import '../style/UserInfo.css';
 // hooks
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+//data
 import { getUserInfos } from '../data/getData';
 
 /**

@@ -5,6 +5,7 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 //hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+//data
 import { getPerformance } from '../../data/getData';
 
 /**

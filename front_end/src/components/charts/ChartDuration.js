@@ -14,6 +14,7 @@ import PropTypes from 'prop-types';
 //hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+//data
 import { getAverage } from '../../data/getData';
 
 /**

@@ -8,6 +8,7 @@ import fatIcon from '../assets/iconsNutriments/fat-icon.png';
 // hooks
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+//data
 import { getUserInfos } from '../data/getData';
 
 /**

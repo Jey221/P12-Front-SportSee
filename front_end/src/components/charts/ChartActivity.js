@@ -13,6 +13,7 @@ import {
 //hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+//data
 import { getActivity } from '../../data/getData';
 /**
  * It takes a value and returns a span with the value and a color of #74798c.

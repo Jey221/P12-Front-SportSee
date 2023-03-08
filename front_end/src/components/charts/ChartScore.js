@@ -5,17 +5,13 @@ import { PieChart, Pie, Cell } from 'recharts';
 //hook
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+//data
 import { getUserInfos } from '../../data/getData';
 
 /**
- * UseEffect(() =&gt; {
- *     async function infoLoad(id) {
- *       const datas = await getUserInfos(id);
- *       setDatas(datas.data);
- *     }
- *     infoLoad(id);
- *     // eslint-disable-next-line react-hooks/exhaustive-deps
- *   }, []);
+ * It's a function that returns a div that contains a div that contains a span that contains a number
+ * and a br that contains a string.
+ * @returns A React component.
  */
 export function Legend() {
   const id = useLocation().pathname;
