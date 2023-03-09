@@ -10,6 +10,7 @@ import {
   Tooltip,
   Rectangle,
 } from 'recharts';
+//props
 import PropTypes from 'prop-types';
 //hook
 import { useLocation } from 'react-router-dom';
@@ -29,7 +30,6 @@ export function TitleChart() {
     </div>
   );
 }
-
 /**
  * It's a React component that renders a line chart
  * @returns A React component.

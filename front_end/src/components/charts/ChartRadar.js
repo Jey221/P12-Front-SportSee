@@ -12,7 +12,7 @@ import { getPerformance } from '../../data/getData';
  * It's a React component that renders a RadarChart using data from an API call.
  * @returns An array of objects.
  */
-export default function App() {
+export default function ChartRadar() {
   const id = useLocation().pathname;
   const [datas, setDatas] = useState([]);
   // load data

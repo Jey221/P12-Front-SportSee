@@ -12,12 +12,12 @@ ul .recharts-surface {
   margin-right: 7px;
 }
 .tooltip {
-  width: 140%;
+  font-size: 8px;
+  width: 118%;
   padding: 2%;
   padding-left: 20%;
   background-color: red;
   color: white;
-  align-items: center;
 }
 .recharts-legend-wrapper {
   margin-top: -6%;
